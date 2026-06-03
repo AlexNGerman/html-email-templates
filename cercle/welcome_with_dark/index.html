@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Muli:300,400,700" rel="stylesheet" />
+  <style type="text/css">
+    body {
+      background-color: #f4f4f4;
+      Margin: 0;
+    }
+
+    table[class=mail-wrapper-outer] {
+      Margin: 0 auto;
+      max-width: 600px;
+      width: 100%;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      color: #ED3C1B;
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    a img {
+      border: 0;
+      display: inline-block;
+    }
+    img{
+      max-width:100% !important;
+      height: auto !important;
+    }
+    div, p, td {
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    .img-respons{
+      max-width: 100%;
+      display: block; border: none; outline: none; border-collapse: collapse; border-style: none;
+    }
+
+    .mail__text-cell{
+      padding: 10px 30px 15px;
+    }
+
+    .mail__center-cell{
+      padding: 60px 20px 0 !important;
+    }
+
+    .btn{
+      height: 35px;
+      line-height: 35px;
+      padding: 0 15px;
+    }
+
+    /* Dark mode — Apple Mail, Outlook app, iOS Mail */
+    @media (prefers-color-scheme: dark) {
+      body,
+      .dm-page {
+        background-color: #1a1a1a !important;
+        color: #F5EBE0 !important;
+      }
+
+      table[class=mail-wrapper-outer] {
+        background-color: #ED3C1B !important;
+      }
+
+      .dm-brand {
+        background-color: #ED3C1B !important;
+      }
+
+      .dm-content {
+        background-color: #2d2824 !important;
+      }
+
+      .dm-text,
+      .mail__top-title,
+      .mail__content-title {
+        color: #F5EBE0 !important;
+      }
+
+      .dm-link,
+      a.dm-link {
+        color: #F5EBE0 !important;
+      }
+
+      .dm-border-top {
+        border-top-color: #F5EBE0 !important;
+      }
+
+      .btn.dm-btn {
+        background-color: #F5EBE0 !important;
+        color: #ED3C1B !important;
+      }
+
+      img.dm-img-separator {
+        filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(426%) hue-rotate(314deg) brightness(103%) contrast(93%);
+      }
+    }
+
+    /* Outlook.com / Outlook app dark mode */
+    [data-ogsc] body,
+    [data-ogsc] .dm-page,
+    [data-ogsb] body,
+    [data-ogsb] .dm-page {
+      background-color: #1a1a1a !important;
+    }
+
+    [data-ogsc] .dm-content,
+    [data-ogsb] .dm-content {
+      background-color: #2d2824 !important;
+    }
+
+    [data-ogsc] .dm-text,
+    [data-ogsc] .mail__top-title,
+    [data-ogsc] .mail__content-title,
+    [data-ogsb] .dm-text,
+    [data-ogsb] .mail__top-title,
+    [data-ogsb] .mail__content-title {
+      color: #F5EBE0 !important;
+    }
+
+    [data-ogsc] .dm-link,
+    [data-ogsb] .dm-link {
+      color: #F5EBE0 !important;
+    }
+
+    [data-ogsc] .btn.dm-btn,
+    [data-ogsb] .btn.dm-btn {
+      background-color: #F5EBE0 !important;
+      color: #ED3C1B !important;
+    }
+
+    @media screen and (max-width: 630px) {
+      table[class=mail-wrapper-outer] { width: 100% !important; }
+    }
+
+    @media screen and (max-width: 560px) {
+      .mail__left-cell,
+      .mail__right-cell {
+        text-align: center !important;
+        width: 15px !important;
+      }
+
+      .mail__footer-cell{
+        height: 15px !important;
+      }
+
+      .mail__center-cell{
+        padding: 30px 10px 0 !important;
+      }
+
+      .mail__text-cell{
+        padding: 10px 5px 15px !important;
+      }
+
+      .btn{
+        font-size: 10px !important;
+        padding: 0 15px !important;
+      }
+
+      .mail__top-title{
+        font-size: 34px !important;
+      }
+      .mail__content-title{
+        font-size: 22px !important;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .mail__left-cell,
+      .mail__right-cell {
+        text-align: center !important;
+        width: 15px !important;
+      }
+
+      .mail__footer-cell{
+        height: 15px !important;
+      }
+
+      .mail__top-title{
+        font-size: 30px !important;
+      }
+      .mail__content-title{
+        font-size: 20px !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="dm-page" style="font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif; color: #ED3C1B; padding: 0;">
+<table class="mail-wrapper dm-page" width="100%" cellpadding="0" align="center" style="background-color: #f4f4f4;" bgcolor="#f4f4f4">
+  <tbody>
+  <tr>
+    <td class="dm-page" style="padding: 5px; background-color: #f4f4f4;" bgcolor="#f4f4f4">
+
+      <table class="mail-wrapper-outer dm-brand" cellpadding="0" cellspacing="0" align="center" width="600" style=" height: auto; background-color:#ED3C1B;" bgcolor="#ED3C1B">
+        <tr style="padding: 0 !important;  text-align: center;">
+          <td class="dm-brand" style="text-align: center; background-color: #ED3C1B; height: 20px; padding: 26px 0 23px;" colspan="3" valign="middle" bgcolor="#ED3C1B" mc:edit="header">
+            <a href="https://www.cercle.uk/" target="_blank" style="display: inline; color: #ED3C1B;">
+              <img mc:edit="header_image" src="images/cercle-logo.png" alt="cercle-logo" width="74" style="width: 74px; max-width: 74px;">
+            </a>
+          </td>
+        </tr>
+        <tr style="padding: 0 !important;  text-align: center;">
+          <td class="mail__left-cell dm-brand" style="background-color:#ED3C1B; width: 50px;" valign="top" bgcolor="#ED3C1B"></td>
+          <td class="mail__center-cell dm-content" style="text-align: center; padding: 0 25px; background-color:#F5EBE0; max-width: 500px;" valign="top" bgcolor="#F5EBE0" mc:edit="body">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" bgcolor="#F5EBE0">
+              <tr style="padding: 0; text-align: center;">
+                <td style="padding: 0; text-align: center;" class="" valign="bottom">
+                  <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; min-width: 100%; max-width: 100%;">
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding: 0;">
+                        <div class="mail__top-title dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:38px;font-weight:400;line-height:1; text-transform: none;" mc:edit="body_head">
+                          <i>*|FNAME|*</i>,<br>
+                          Welcome to CERCLE
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding: 30px 0;">
+                        <img class="dm-img-separator" src="images/separator.png" alt="separator" width="78" style="width: 78px; max-width: 78px;">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
+              <tr style="padding: 0; text-align: center;">
+                <td style="padding: 0; text-align: center;" class="" valign="bottom">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
+                    <tr>
+                      <td align="center" valign="middle" class="mail__text-cell" style="height: auto; padding: 0 30px 15px;">
+                        <div class="dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:13px;font-weight:400;line-height:1.2;" mc:edit="article_content">
+                          Dear <i>*|FNAME|*</i>,
+                          <br><br>
+                          It is a pleasure to welcome you to our CERCLE community.
+                          <br><br>
+                          CERCLE is the innovative style rental platform for conscious individuals who want to consume less and access more. It is also the first philanthropic platform focusing on giving back. We enable lenders to leverage their under-utilised wardrobes to raise funds for a charity dear to their heart.
+                          <br><br>
+                          With 10 years living in capital cities including Beijing, New York, Brussels and of course, London, I’ve learnt the value of a ‘less is more’ approach to style. Dressing only from two suitcases and borrowing from close friends and family made sharing as pleasurable as owning. That’s the experience I’d like to share with our amazing community through CERCLE, which takes its name from the French phrase ‘cercle d’amis’ or ‘circle of friends’. It also references the circular economy of Style Sharing and the environmental benefits.
+                          <br><br>
+                          We love the idea of living a minimalist life but with maximum access.
+                          Style sharing does this. It’s better for our souls and better for the earth.
+                          It is our belief that a well-curated life deserves to be shared.
+                          <br><br>
+                          Myself and the team would be delighted to invite you for a Welcome Styling Session at L’Appartement CERCLE and provide you with some tailored recommendations.
+                          <br><br>
+                          I really look forward to seeing you - hopefully in your next shared piece.
+                          <br><br>
+                          Warmest,<br>
+                          Coco x<br>
+                          Founder and CEO of CERCLE
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding: 15px 0 15px;">
+                        <div class="text-center">
+                          <a title="START SHARING" href="https://www.cercle.uk/" target="_blank" class="btn dm-btn" style="background-color: #ED3C1B; color: #ffffff; height: 35px; line-height:35px; border-radius: 40px; box-sizing: border-box; padding: 0 50px;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:12px;font-weight:400; text-transform: uppercase; text-decoration: none;" mc:edit="article_btn">
+                            START SHARING
+                          </a>
+                          <br><br>
+                          <div class="dm-text" style="text-align:center;color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2;" mc:edit="article_content">
+                            or <a title="LEARN HOW TO LEND" href="https://www.cercle.uk/pages/how-it-works" target="_blank" class="dm-link" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2; text-transform: uppercase; text-decoration: underline;" mc:edit="article_link">
+                            LEARN HOW TO LEND
+                          </a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding: 15px 0 30px;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0">
+                          <tbody>
+                          <tr>
+                            <td align="center" style="padding-top:0px">
+                              <img src="images/footer-frame.png" width="402" border="0" alt="footer-frame" class="img-respons" style="width: 100%; max-width: 402px; display: block; border: none; outline: none; border-collapse: collapse; border-style: none;" mc:edit="postcard">
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" mc:edit="footer" bgcolor="#F5EBE0">
+              <tr style="padding: 0; text-align: center;">
+                <td style="padding: 0; text-align: center;" class="" valign="bottom">
+                  <table class="dm-border-top" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #ED3C1B; width: 100%; min-width: 100%; max-width: 100%;">
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding: 30px 10px;">
+                        <div class="mail__content-title dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:25px;font-weight:400;line-height:1.2; text-transform: none;">
+                          Shared Stories. Borrowed Style
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding:0;">
+                        <div style="text-align:center;color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2; text-transform: uppercase;">
+                          ©2022 CERCLE. All rights reserved.
+                        </div>
+                        <div style="height:10px;line-height:10px;font-size:7px;"> </div>
+                        <div style="text-align:center;color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2;">
+                          <a href="*|UNSUB|*" target="_blank" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:9px;font-weight:400;line-height:1.2;text-decoration:none;Margin:0 2px; text-transform: uppercase;">Unsubscribe</a>
+
+                          <span style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:9px;font-weight:400;line-height:1.2;">|</span>
+
+                          <a href="https://www.cercle.uk/pages/faq" target="_blank" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:9px;font-weight:400;line-height:1.2;text-decoration:none;Margin:0 2px; text-transform: uppercase;">TERMS OF SERVICE</a>
+
+                          <span style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:9px;font-weight:400;line-height:1.2;">|</span>
+
+                          <a href="https://www.cercle.uk/pages/faq" target="_blank" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:9px;font-weight:400;line-height:1.2;text-decoration:none;Margin:0 2px; text-transform: uppercase;">PRIVACY POLICY</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="middle" style="height: auto; padding:30px 30px 36px;">
+                        <table cellpadding="0" cellspacing="0" class="mail-service-list">
+                          <tbody>
+                          <tr>
+                            <!--<td style="padding: 0 5px;" mc:hideable>
+                              <a href="https://www.twitter.com/" target="_blank" style="display: inline-block; text-decoration: none;">
+                                <img
+                                  src="images/ico-tw.png"
+                                  alt="twitter"
+                                  width="12"
+                                  height="12" style="width: 12px; max-width: 12px;"/>
+                              </a>
+                            </td>-->
+                            <td style="padding: 0 7px;" mc:hideable>
+                              <a href="https://www.facebook.com/cercle.uk" target="_blank" style="display: inline-block; text-decoration: none;">
+                                <img
+                                  src="images/ico-fb.png"
+                                  alt="facebook"
+                                  width="12"
+                                  height="12" style="width: 12px; max-width: 12px;"/>
+                              </a>
+                            </td>
+                            <td style="padding: 0 7px;" mc:hideable>
+                              <a href="https://www.instagram.com/cercle.uk/" target="_blank" style="display: inline-block; text-decoration: none;">
+                                <img
+                                  src="images/ico-inst.png"
+                                  alt="instagram"
+                                  width="12"
+                                  height="12" style="width: 12px; max-width: 12px;"/>
+                              </a>
+                            </td>
+                            <!--<td style="padding: 0 7px;" mc:hideable>-->
+                            <!--<a href="https://www.linkedin.com/company/56452009/admin/" target="_blank" style="display: inline-block; text-decoration: none;">-->
+                            <!--<img-->
+                            <!--src="images/ico-linkedin.png"-->
+                            <!--alt="linkedin"-->
+                            <!--width="12"-->
+                            <!--height="12" style="width: 12px; max-width: 12px;"/>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td style="padding: 0 7px;" mc:hideable>-->
+                            <!--<a href="https://www.pinterest.com/" target="_blank" style="display: inline-block; text-decoration: none;">-->
+                            <!--<img-->
+                            <!--src="images/ico-pint.png"-->
+                            <!--alt="pinterest"-->
+                            <!--width="12"-->
+                            <!--height="12"  style="width: 12px; max-width: 12px;"/>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                          </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="mail__right-cell" style="background-color:#ED3C1B; width: 50px;" valign="top" bgcolor="#ED3C1B"></td>
+        </tr>
+        <tr style="padding: 0; text-align: center;">
+          <td style="text-align: center; background-color:#ED3C1B; height: 50px;" colspan="3" class="mail__footer-cell" valign="top" bgcolor="#ED3C1B"></td>
+        </tr>
+      </table>
+
+
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
