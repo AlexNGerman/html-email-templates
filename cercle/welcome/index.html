@@ -3,7 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light only" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
   <meta name="x-apple-disable-message-reformatting" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Muli:300,400,700" rel="stylesheet" />
   <style type="text/css">
@@ -12,7 +13,7 @@
       Margin: 0;
     }
 
-    table[class=mail-wrapper-outer] {
+    table.mail-wrapper-outer {
       Margin: 0 auto;
       max-width: 600px;
       width: 100%;
@@ -60,8 +61,86 @@
       padding: 0 15px;
     }
 
+    /* Dark mode — Apple Mail, Outlook app, iOS Mail */
+    @media (prefers-color-scheme: dark) {
+      body,
+      .dm-page {
+        background-color: #1a1a1a !important;
+        color: #F5EBE0 !important;
+      }
+
+      table[class=mail-wrapper-outer] {
+        background-color: #ED3C1B !important;
+      }
+
+      .dm-brand {
+        background-color: #ED3C1B !important;
+      }
+
+      .dm-content {
+        background-color: #2d2824 !important;
+      }
+
+      .dm-text,
+      .mail__top-title,
+      .mail__content-title {
+        color: #F5EBE0 !important;
+      }
+
+      .dm-link,
+      a.dm-link {
+        color: #F5EBE0 !important;
+      }
+
+      .dm-border-top {
+        border-top-color: #F5EBE0 !important;
+      }
+
+      .btn.dm-btn {
+        background-color: #F5EBE0 !important;
+        color: #ED3C1B !important;
+      }
+
+      img.dm-img-separator {
+        filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(426%) hue-rotate(314deg) brightness(103%) contrast(93%);
+      }
+    }
+
+    /* Outlook.com / Outlook app dark mode */
+    [data-ogsc] body,
+    [data-ogsc] .dm-page,
+    [data-ogsb] body,
+    [data-ogsb] .dm-page {
+      background-color: #1a1a1a !important;
+    }
+
+    [data-ogsc] .dm-content,
+    [data-ogsb] .dm-content {
+      background-color: #2d2824 !important;
+    }
+
+    [data-ogsc] .dm-text,
+    [data-ogsc] .mail__top-title,
+    [data-ogsc] .mail__content-title,
+    [data-ogsb] .dm-text,
+    [data-ogsb] .mail__top-title,
+    [data-ogsb] .mail__content-title {
+      color: #F5EBE0 !important;
+    }
+
+    [data-ogsc] .dm-link,
+    [data-ogsb] .dm-link {
+      color: #F5EBE0 !important;
+    }
+
+    [data-ogsc] .btn.dm-btn,
+    [data-ogsb] .btn.dm-btn {
+      background-color: #F5EBE0 !important;
+      color: #ED3C1B !important;
+    }
+
     @media screen and (max-width: 630px) {
-      table[class=mail-wrapper-outer] { width: 100% !important; }
+      table.mail-wrapper-outer { width: 100% !important; }
     }
 
     @media screen and (max-width: 560px) {
@@ -118,30 +197,30 @@
   </style>
 </head>
 
-<body style="font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif; color: #ED3C1B; padding: 0;">
-<table class="mail-wrapper" width="100%" cellpadding="0" align="center" style="background-color: #f4f4f4;" bgcolor="#f4f4f4">
+<body class="dm-page" style="font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif; color: #ED3C1B; padding: 0;">
+<table class="mail-wrapper dm-page" width="100%" cellpadding="0" align="center" style="background-color: #f4f4f4;" bgcolor="#f4f4f4">
   <tbody>
   <tr>
-    <td style="padding: 5px; background-color: #f4f4f4;" bgcolor="#f4f4f4">
+    <td class="dm-page" style="padding: 5px; background-color: #f4f4f4;" bgcolor="#f4f4f4">
 
-      <table class="mail-wrapper-outer" cellpadding="0" cellspacing="0" align="center" width="600" style=" height: auto; background-color:#ED3C1B;" bgcolor="#ED3C1B">
+      <table class="mail-wrapper-outer dm-brand" cellpadding="0" cellspacing="0" align="center" width="600" style=" height: auto; background-color:#ED3C1B;" bgcolor="#ED3C1B">
         <tr style="padding: 0 !important;  text-align: center;">
-          <td style="text-align: center; background-color: #ED3C1B; height: 20px; padding: 26px 0 23px;" colspan="3" class="" valign="middle" bgcolor="#ED3C1B" mc:edit="header">
+          <td class="dm-brand" style="text-align: center; background-color: #ED3C1B; height: 20px; padding: 26px 0 23px;" colspan="3" valign="middle" bgcolor="#ED3C1B" mc:edit="header">
             <a href="https://www.cercle.uk/" target="_blank" style="display: inline; color: #ED3C1B;">
               <img mc:edit="header_image" src="images/cercle-logo.png" alt="cercle-logo" width="74" style="width: 74px; max-width: 74px;">
             </a>
           </td>
         </tr>
         <tr style="padding: 0 !important;  text-align: center;">
-          <td class="mail__left-cell" style="background-color:#ED3C1B; width: 50px;" valign="top" bgcolor="#ED3C1B"></td>
-          <td class="mail__center-cell" style="text-align: center; padding: 0 25px; background-color:#F5EBE0; max-width: 500px;" valign="top" bgcolor="#F5EBE0" mc:edit="body">
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" bgcolor="#F5EBE0">
+          <td class="mail__left-cell dm-brand" style="background-color:#ED3C1B; width: 50px;" valign="top" bgcolor="#ED3C1B"></td>
+          <td class="mail__center-cell dm-content" style="text-align: center; padding: 0 25px; background-color:#F5EBE0; max-width: 500px;" valign="top" bgcolor="#F5EBE0" mc:edit="body">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" bgcolor="#F5EBE0">
               <tr style="padding: 0; text-align: center;">
                 <td style="padding: 0; text-align: center;" class="" valign="bottom">
                   <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; min-width: 100%; max-width: 100%;">
                     <tr>
                       <td align="center" valign="middle" style="height: auto; padding: 0;">
-                        <div class="mail__top-title" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:38px;font-weight:400;line-height:1; text-transform: none;" mc:edit="body_head">
+                        <div class="mail__top-title dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:38px;font-weight:400;line-height:1; text-transform: none;" mc:edit="body_head">
                           <i>*|FNAME|*</i>,<br>
                           Welcome to CERCLE
                         </div>
@@ -149,7 +228,7 @@
                     </tr>
                     <tr>
                       <td align="center" valign="middle" style="height: auto; padding: 30px 0;">
-                        <img src="images/separator.png" alt="separator" width="78" style="width: 78px; max-width: 78px;">
+                        <img class="dm-img-separator" src="images/separator.png" alt="separator" width="78" style="width: 78px; max-width: 78px;">
                       </td>
                     </tr>
                   </table>
@@ -157,13 +236,13 @@
               </tr>
             </table>
 
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
               <tr style="padding: 0; text-align: center;">
                 <td style="padding: 0; text-align: center;" class="" valign="bottom">
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation"  bgcolor="#F5EBE0">
                     <tr>
                       <td align="center" valign="middle" class="mail__text-cell" style="height: auto; padding: 0 30px 15px;">
-                        <div style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:13px;font-weight:400;line-height:1.2;" mc:edit="article_content">
+                        <div class="dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:13px;font-weight:400;line-height:1.2;" mc:edit="article_content">
                           Dear <i>*|FNAME|*</i>,
                           <br><br>
                           It is a pleasure to welcome you to our CERCLE community.
@@ -189,12 +268,12 @@
                     <tr>
                       <td align="center" valign="middle" style="height: auto; padding: 15px 0 15px;">
                         <div class="text-center">
-                          <a title="START SHARING" href="https://www.cercle.uk/" target="_blank" class="btn" style="background-color: #ED3C1B; color: #ffffff; height: 35px; line-height:35px; border-radius: 40px; box-sizing: border-box; padding: 0 50px;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:12px;font-weight:400; text-transform: uppercase; text-decoration: none;" mc:edit="article_btn">
+                          <a title="START SHARING" href="https://www.cercle.uk/" target="_blank" class="btn dm-btn" style="background-color: #ED3C1B; color: #ffffff; height: 35px; line-height:35px; border-radius: 40px; box-sizing: border-box; padding: 0 50px;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:12px;font-weight:400; text-transform: uppercase; text-decoration: none;" mc:edit="article_btn">
                             START SHARING
                           </a>
                           <br><br>
-                          <div style="text-align:center;color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2;" mc:edit="article_content">
-                            or <a title="LEARN HOW TO LEND" href="https://www.cercle.uk/pages/how-it-works" target="_blank" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2; text-transform: uppercase; text-decoration: underline;" mc:edit="article_link">
+                          <div class="dm-text" style="text-align:center;color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2;" mc:edit="article_content">
+                            or <a title="LEARN HOW TO LEND" href="https://www.cercle.uk/pages/how-it-works" target="_blank" class="dm-link" style="color:#ED3C1B;font-family: Helvetica, Arial, 'Muli', 'Century Gothic', sans-serif;font-size:10px;font-weight:400;line-height:1.2; text-transform: uppercase; text-decoration: underline;" mc:edit="article_link">
                             LEARN HOW TO LEND
                           </a>
                           </div>
@@ -219,13 +298,13 @@
               </tr>
             </table>
 
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" mc:edit="footer" bgcolor="#F5EBE0">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dm-content" style="width: 100%; min-width: 100%; max-width: 100%; background-color:#F5EBE0;" role="presentation" mc:edit="footer" bgcolor="#F5EBE0">
               <tr style="padding: 0; text-align: center;">
                 <td style="padding: 0; text-align: center;" class="" valign="bottom">
-                  <table cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #ED3C1B; width: 100%; min-width: 100%; max-width: 100%;">
+                  <table class="dm-border-top" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #ED3C1B; width: 100%; min-width: 100%; max-width: 100%;">
                     <tr>
                       <td align="center" valign="middle" style="height: auto; padding: 30px 10px;">
-                        <div class="mail__content-title" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:25px;font-weight:400;line-height:1.2; text-transform: none;">
+                        <div class="mail__content-title dm-text" style="text-align:center;color:#ED3C1B;font-family: 'Times New Roman', 'Muli', 'Century Gothic', Helvetica, Arial, sans-serif;font-size:25px;font-weight:400;line-height:1.2; text-transform: none;">
                           Shared Stories. Borrowed Style
                         </div>
                       </td>
